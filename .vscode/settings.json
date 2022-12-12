@@ -1,0 +1,16 @@
+{
+    "git.ignoreLimitWarning": true,
+    "java.project.sourcePaths": [
+        "Arrays\\Hard",
+        "Arrays\\Easy",
+        "Arrays\\Medium",
+        "Recursion",
+        "Recursion\\Easy",
+        "Strings\\Medium",
+        "Strings\\Easy",
+        "Strings\\Hard",
+        "Dynamic Programming\\Medium",
+        "Dynamic Programming\\Easy",
+        "Dynamic Programming\\Hard"
+    ]
+}

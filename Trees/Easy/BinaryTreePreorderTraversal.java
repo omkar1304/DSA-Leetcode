@@ -16,6 +16,7 @@
  * }
  */
 class Solution {
+    // using recursion ->
     public void preOrderRec(TreeNode root, List<Integer> ans){
          // base case
         
@@ -29,6 +30,7 @@ class Solution {
         preOrderRec(root.right , ans);
     }
     
+    // using iterative ->
     public List<Integer> preOrderIter(TreeNode root){
         
         List<Integer> list = new ArrayList<>();
@@ -59,5 +61,52 @@ class Solution {
         return preOrderIter(root);
         
         
+    }
+
+    // Morris Traversal | Preorder ->
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        
+        // to store nodes in preorder manner
+        List<Integer> result = new ArrayList<>();
+        
+        // starting from root node
+        TreeNode current = root;
+        
+        while(current != null){
+            
+            // first we need to check if it has left ? if not then add root value in result and move to right
+            if(current.left == null){
+                result.add(current.val);
+                current = current.right;
+            }
+            // if it has left then ->
+            else{
+                
+                // first thing find its right most node in left subtree
+                TreeNode tempNode = current.left;
+                
+                // keeping going down until we get rightmost node which either pointing to null OR
+                // there is thread between rightmost node to current node
+                while(tempNode.right != null && tempNode.right != current)
+                    tempNode = tempNode.right;
+                
+                // if its pointing to null then make thread between rightmost node and current node
+                // and again start iterating in left subtree and add in result
+                if(tempNode.right == null){
+                    tempNode.right = current;
+                    result.add(current.val);
+                    current = current.left;
+                }
+                // if there is already thread means we added all nodes in result list then remove thread
+                // add current node in result and move its right part as we already done with left part
+                else{
+                    tempNode.right = null;
+                    current = current.right;
+                }
+            }
+        }
+        
+        return result;
     }
 }

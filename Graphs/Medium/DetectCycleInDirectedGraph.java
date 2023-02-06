@@ -57,3 +57,50 @@ class Solution {
         return false;
     }
 }
+
+// BFS ->
+class Solution {
+    // As we know topoligcal sort only applicable when graph is CAG if not then in topo array all nodes will not cover
+    // hence if count == no of nodes then there is no cycle else there is cycle
+    public boolean isCyclic(int n, ArrayList<ArrayList<Integer>> adj) {
+        
+        // Creating inDegree array to store no of incoming edges to node
+        int[] inDegree = new int[n];
+        for(int i=0; i<n; i++){
+            for(int neighbour : adj.get(i)){
+                inDegree[neighbour] = inDegree[neighbour] + 1;
+            }
+        }
+        
+        // queue to store node which having inDegree value 0
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i=0; i<n; i++){
+            if(inDegree[i] == 0){
+                queue.add(i);
+            }
+        }
+        
+        // instead of topo array we can use counter
+        int count = 0;
+        while(!queue.isEmpty()){
+            
+            int node = queue.peek();
+            queue.poll();
+            count++;
+            
+            for(int neighbour : adj.get(node)){
+                
+                // reduce count of inDegree of neighbour by 1 (remove one edge)
+                inDegree[neighbour] = inDegree[neighbour] - 1;
+                
+                // if it becomes 0 then add in queue else continue
+                if(inDegree[neighbour] == 0){
+                    queue.add(neighbour);
+                }
+            }
+        }
+        
+        // if count is same as no of nodes then there is no cycle else there is cycle
+        return count == n ? false : true;
+    }
+}

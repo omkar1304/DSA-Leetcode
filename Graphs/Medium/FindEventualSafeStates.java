@@ -64,3 +64,61 @@ class Solution {
         return false;
     }
 }
+
+// BFS ->
+class Solution {
+    public List<Integer> eventualSafeNodes(int[][] matrix) {
+        
+        int n = matrix.length;
+        
+        // creating reverse of adj list so that insteand of going safe node to terminal we can go terminal node to safe node as we know terminal node is always going to be safe node
+        List<List<Integer>> adjRev = new ArrayList<>();
+        for(int i=0; i<n; i++)
+            adjRev.add(new ArrayList<>());
+        for(int i=0; i<n; i++){
+            for(int neighbour : matrix[i]){
+                adjRev.get(neighbour).add(i);
+            }
+        }
+        
+        // Creating inDegree array to store no of incoming edges to node
+        int[] inDegree = new int[n];
+        for(int i=0; i<n; i++){
+            for(int neighbour : adjRev.get(i)){
+                inDegree[neighbour] = inDegree[neighbour] + 1;
+            }
+        }
+        
+        // creating result to store safe nodes
+        // queue to store node which having inDegree value 0
+        List<Integer> result = new ArrayList<>();
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i=0; i<n; i++){
+            if(inDegree[i] == 0){
+                queue.add(i);
+            }
+        }
+        
+        
+        while(!queue.isEmpty()){
+            // pop out node which having 0 inDegree value so its safe node add in result and check for its neighbours
+            int node = queue.peek();
+            queue.poll();
+            result.add(node);
+            
+            for(int neighbour : adjRev.get(node)){
+                
+                 // reduce count of inDegree of neighbour by 1 (remove one edge)
+                inDegree[neighbour] = inDegree[neighbour] - 1;
+                
+                 // if it becomes 0 then add in queue else continue
+                if(inDegree[neighbour] == 0)
+                    queue.add(neighbour);
+            }
+        }
+        
+        // sort result as per requirement and return it
+        Collections.sort(result);
+        return result;
+    }
+}

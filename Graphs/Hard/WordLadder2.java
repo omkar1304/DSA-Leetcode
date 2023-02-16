@@ -82,7 +82,7 @@ class Solution {
     }
 }
 
-// optimized and accepted solution but not predicable
+// optimized and accepted solution but not predictable
 class Solution {
     // if we move seq from start word to end word we will get multiple routes but at the end we will get few only which will leads to end word so we can start from endword to start word to avoid extra paths
     public void DFS(String currWord, String targetWord, List<String> seq, Map<String, Integer> map, List<List<String>> result){

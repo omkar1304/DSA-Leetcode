@@ -1,5 +1,8 @@
 // https://practice.geeksforgeeks.org/problems/number-of-provinces/1
+//https://leetcode.com/problems/number-of-provinces/
 
+
+// using DFS ->
 class Solution {
     static void dfs(int node, ArrayList<ArrayList<Integer>> adjList, int[] visited){
         // This function does DFS on graph
@@ -46,3 +49,82 @@ class Solution {
         return count;
     }
 };
+
+// Using DSU(Disjoint union set) ->
+
+class Solution {
+    public int findCircleNum(int[][] edges) {
+        
+        int n = edges.length;
+        
+        // creating object of DSU class
+        DSU dsu = new DSU(n);
+        
+        // checking for edge between i and j
+        for(int i=0; i<n; i++){
+            
+            for(int j=i+1; j<n; j++){ // here skipping visited edge i -> j so we dont need to go again with j -> i and also itself j -> j
+                
+                // if there is edge then we have to update parent, size, count in DSU
+                if(edges[i][j] == 1)
+                    
+                    dsu.unionBySize(i, j);
+            }
+        }
+        
+        // at the end return DSU count
+        return dsu.count;
+
+        // alternate -> we can also check no of provinces using parent list. if i == parent.get(i) then it will different compoent so we can take count of how many ndes satisfy this condition and we can return count
+    }
+}
+
+class DSU {
+    
+    int count = 0;
+    List<Integer> parent = new ArrayList<>();
+    List<Integer> size = new ArrayList<>();
+    
+    public DSU(int n){
+        
+        // initially every node is consider as single component
+        count = n;
+        
+        for(int i=0; i<n; i++){
+            parent.add(i);
+            size.add(1);
+        }
+    }
+    
+    public int findUPar(int node){
+        
+        if(node == parent.get(node))
+            return node;
+        
+        int ulp = findUPar(parent.get(node));
+        parent.set(node, ulp);
+        
+        return ulp;
+    }
+    
+    public void unionBySize(int u, int v){
+        
+        int ulp_u = findUPar(u);
+        int ulp_v = findUPar(v);
+        
+        if(ulp_u == ulp_v)
+            return;
+        
+        else if(size.get(ulp_u) < size.get(ulp_v)){
+            parent.set(ulp_u, ulp_v);
+            size.set(ulp_v, size.get(ulp_u) + size.get(ulp_v));
+        }
+        
+        else{
+            parent.set(ulp_v, ulp_u);
+            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));
+        }
+        
+        count--;
+    }
+}

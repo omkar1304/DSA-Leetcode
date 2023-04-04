@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class TheKWeakestRowsinaMatrix {
-     // to count number od one's in array(1D)
+     // to count number of one's in array(1D)
      public int countofone(int[] a){
         int counter = 0;
         for(int i=0; i<a.length; i++){

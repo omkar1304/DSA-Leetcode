@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/number-of-enclaves/
 
+// BFS ->
 class Solution {
     public int numEnclaves(int[][] matrix){
         
@@ -85,5 +86,56 @@ class Pair{
     public Pair(int row, int col){
         this.row = row;
         this.col = col;
+    }
+}
+
+// DFS ->
+class Solution {
+    public int numEnclaves(int[][] grid) {
+        
+        int m = grid.length;
+        int n = grid[0].length;
+        
+        // check at boundary of matrix if we find 1 there then its neighbours will also can get out of bound
+        // hence first check at 4 boundries and if we get 1 then mark it as -1 (to identify as visited) and apply DFS to them so all connceted neighbours will get marked as -1 
+        for(int i=0; i<m; i++){        
+            if(grid[i][0] == 1)
+                DFS(i, 0, grid);         
+            if(grid[i][n-1] == 1)
+                DFS(i, n-1, grid);
+        }
+        
+        for(int j=0; j<n; j++){
+            if(grid[0][j] == 1)
+                DFS(0, j, grid);
+            if(grid[m-1][j] == 1)
+                DFS(m-1, j, grid);
+        }
+        
+        // now just calculate how many cells are there with value 1 (land cells)
+        int counter = 0;
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                if(grid[i][j] == 1)
+                    counter++;
+            }
+        }
+        
+        return counter;
+    }
+    
+    public void DFS(int i, int j, int[][] grid){
+        
+        // if cell is out of bound or not land cell then skip
+        if(i < 0 || j < 0 || i>= grid.length || j>=grid[0].length || grid[i][j] != 1)
+            return;
+        
+        // else mark it as -1 (visited) and apply DFS to its 4 neighborus
+        grid[i][j] = -1;
+        
+        DFS(i+1, j, grid);
+        DFS(i-1, j, grid);
+        DFS(i, j+1, grid);
+        DFS(i, j-1, grid);
     }
 }

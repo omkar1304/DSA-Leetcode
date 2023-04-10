@@ -10,8 +10,6 @@ public class Search2DMatrix {
             else return false;
         }
             
-        
-        
         while(row<matrix.length && col>=0){
             
             if(matrix[row][col] == target) return true;

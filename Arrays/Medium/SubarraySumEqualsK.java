@@ -2,6 +2,7 @@
 
 import java.util.HashMap;
 
+// Same as 2 sum problem -> here also we check if sum - k is present in map if yes then get the count of it else put num in map 
 public class SubarraySumEqualsK {
     public int subarraySum(int[] nums, int k) {
         

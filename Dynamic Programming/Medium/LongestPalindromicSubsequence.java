@@ -48,3 +48,58 @@ public class LongestPalindromicSubsequence {
         
     }
 }
+
+// Recursion + Memoization ->
+class Solution {
+    
+    // same problem as LCS here just we need to find palindrome so take another string which is reverse of x and now apply LCS logic
+    
+    public int longestPalindromeSubseq(String x) {
+        
+        // get the reverse of x
+        String y = reverse(x);
+        int count = 0;
+        int n = x.length();
+        
+        // Memoization ->
+        int[][] dp = new int[n+1][n+1];
+        for(int i=0; i<n+1; i++)
+            for(int j=0; j<n+1; j++)
+                dp[i][j] = -1;
+        
+        return lps(x, y, 0, 0, dp);
+        
+    }
+    
+    public int lps(String x, String y, int i, int j, int[][] dp){
+        
+        // if any string is completed then just return 0 as we cant match further
+        if(i >= x.length() || j >= y.length())
+            return 0;
+        
+        // if present then return 
+        if(dp[i][j] != -1)
+            return dp[i][j];
+        
+        // if both are same then we got first palindrom char so add 1 and move both pointers by 1 and check further
+        if(x.charAt(i) == y.charAt(j))
+            return dp[i][j] = 1 + lps(x, y, i+1, j+1, dp);
+        
+        // else if doesnt match then we have two choice either inc i pother or j pointer
+        int op1 = lps(x, y, i+1, j, dp);
+        int op2 = lps(x, y, i, j+1, dp);
+        
+        // take max out of it and return
+        return dp[i][j] = Math.max(op1, op2);
+    }
+    
+    
+    public String reverse(String s){    
+        String y = "";
+        
+        for(int i=s.length()-1; i>=0; i--)
+            y = y + s.charAt(i);
+        
+        return y;  
+    }
+}

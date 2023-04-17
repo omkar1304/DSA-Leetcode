@@ -26,7 +26,6 @@ public class LargestRectangleInHistogram {
                 leftStack.push(i);
             }
         }
-        // System.out.println(Arrays.toString(left));
         // fill right
         for(int i=n-1; i>=0; i--){
             if(rightStack.isEmpty()){

@@ -49,3 +49,46 @@ public class MinimumInsertionStepsToMakeStringPalindrome {
         return x.length() - lps; // delete formula -> x.length() - lcs or lps length
     }
 }
+
+
+// Recursion + Memo ->
+class Solution {
+    public int minInsertions(String x) {
+        
+        String y = reverse(x);
+        
+        int[][] dp = new int[x.length()+1][y.length()+1];
+        for(int i=0; i<x.length()+1; i++)
+            for(int j=0; j<y.length()+1; j++)
+                dp[i][j] = -1;
+        
+        return x.length() - helper(0, 0, x, y, dp);
+    }
+    
+    public int helper(int i, int j, String x, String y,int[][] dp){
+        
+        if(i == x.length() || j == x.length())
+            return 0;
+        
+        if(dp[i][j] != -1)
+            return dp[i][j];
+        
+        if(x.charAt(i) == y.charAt(j))
+            return 1 + helper(i+1, j+1, x, y, dp);
+        
+        int op1 = helper(i+1, j, x, y, dp);
+        int op2 = helper(i, j+1, x, y, dp);
+        
+        return dp[i][j] = Math.max(op1, op2);
+    }
+    
+    
+    public String reverse(String s){    
+        String y = "";
+        
+        for(int i=s.length()-1; i>=0; i--)
+            y = y + s.charAt(i);
+        
+        return y;  
+    }
+}

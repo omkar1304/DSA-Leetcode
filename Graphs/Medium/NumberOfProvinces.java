@@ -50,8 +50,58 @@ class Solution {
     }
 };
 
-// Using DSU(Disjoint union set) ->
+// using BFS ->
+class Solution {
+    public int findCircleNum(int[][] edges) {
+        
+        int n = edges.length;
+        
+        List<List<Integer>> adj = new ArrayList<>();
+        for(int i=0; i<n; i++)
+            adj.add(new ArrayList<>());
+        
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(edges[i][j] == 1){
+                    adj.get(i).add(j);
+                    adj.get(j).add(i);
+                }
+            }
+        }
+        
+        int[] visited = new int[n];
+        int count = 0;
+        
+        Queue<Integer> queue = new LinkedList<>();
+        
+        for(int i=0; i<n; i++){
+            
+            if(visited[i] == 0){
+                visited[i] = 1;
+                count++;
+                
+                queue.offer(i);
+                
+                while(!queue.isEmpty()){
+                    
+                    int node = queue.poll();
+                    
+                    for(int neighbor : adj.get(node)){
+                        if(visited[neighbor] == 0){
+                            visited[neighbor] = 1;
+                            queue.offer(neighbor);
+                        }
+                            
+                    }
+                }
+            }
+        }
+        
+        return count;
+    }
+}
 
+// Using DSU(Disjoint union set) ->
 class Solution {
     public int findCircleNum(int[][] edges) {
         
@@ -78,7 +128,6 @@ class Solution {
         // alternate -> we can also check no of provinces using parent list. if i == parent.get(i) then it will different compoent so we can take count of how many ndes satisfy this condition and we can return count
     }
 }
-
 class DSU {
     
     int count = 0;

@@ -1,5 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/number-of-provinces/1
-//https://leetcode.com/problems/number-of-provinces/
+// https://leetcode.com/problems/number-of-provinces/
 
 
 // using DFS ->

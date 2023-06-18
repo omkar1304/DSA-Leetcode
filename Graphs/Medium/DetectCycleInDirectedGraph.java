@@ -60,7 +60,7 @@ class Solution {
 
 // BFS ->
 class Solution {
-    // As we know topoligcal sort only applicable when graph is CAG if not then in topo array all nodes will not cover
+    // As we know topoligcal sort only applicable when graph is DAG if not then in topo array all nodes will not cover
     // hence if count == no of nodes then there is no cycle else there is cycle
     public boolean isCyclic(int n, ArrayList<ArrayList<Integer>> adj) {
         

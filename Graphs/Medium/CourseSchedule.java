@@ -2,7 +2,7 @@
 
 class Solution {
     // here we can apply topological sort as we can consider 1, 0 as u -> v 
-    // As we know topoligcal sort only applicable when graph is CAG if not then in topo array all nodes will not cover
+    // As we know topoligcal sort only applicable when graph is DAG if not then in topo array all nodes will not cover
     // hence if count == no of nodes then there is no cycle else there is cycle
     
     public boolean canFinish(int n, int[][] matrix) {

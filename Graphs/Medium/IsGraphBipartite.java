@@ -3,7 +3,9 @@
 
 // BFS ->
 class Solution {
-    // (directed) and (undirected graph with even cycle length) is always bipartite graph else not
+    // (directed) and (undirected graph with even cycle length) is always bipartite graph else not.
+    // Simple bipartite means if we want to color a node using two colors then adjacent node should not have same color.
+
     public boolean isBipartite(int[][] matrix) {
         
         // taking no of nodes in graph

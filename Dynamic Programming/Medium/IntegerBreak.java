@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/integer-break/
 
+import java.util.*;
+
 public class IntegerBreak {
     public int helper(int num, int index, int[] dp){
         // base case

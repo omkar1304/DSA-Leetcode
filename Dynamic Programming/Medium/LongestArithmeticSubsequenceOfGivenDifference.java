@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/
 
+import java.util.*;
+
 public class LongestArithmeticSubsequenceOfGivenDifference {
     public int longestSubsequence(int[] nums, int difference) {
         // every element is itself longest AP hence min is 1

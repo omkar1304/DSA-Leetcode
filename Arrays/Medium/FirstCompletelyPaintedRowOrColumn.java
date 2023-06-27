@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/first-completely-painted-row-or-column/
 
+import java.util.*;
+
 class Solution {
     public int firstCompleteIndex(int[] arr, int[][] mat) {
         

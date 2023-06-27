@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/find-the-longest-semi-repetitive-substring/
 
+
 class Solution {
     public int longestSemiRepetitiveSubstring(String s) {
         

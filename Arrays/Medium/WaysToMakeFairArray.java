@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/ways-to-make-a-fair-array/
 
+
 class Solution {
     public int waysToMakeFair(int[] nums) {
         

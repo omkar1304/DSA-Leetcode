@@ -1,11 +1,12 @@
 // https://leetcode.com/problems/validate-stack-sequences/
 
+import java.util.*;
 class Solution {
     public boolean validateStackSequences(int[] pushed, int[] popped) {
         
         // to itrate over popped array
         int popIndex = 0;
-        Stack<Integer> stack = new Stack();
+        Stack<Integer> stack = new Stack<>();
         
         // taking out psuh number from pushed array
         for(Integer pushNumber : pushed){

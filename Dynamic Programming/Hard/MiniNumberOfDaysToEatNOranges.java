@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/
 
+import java.util.*;
 public class MiniNumberOfDaysToEatNOranges {
     private HashMap<Integer,Integer> mp = new HashMap<>();
     

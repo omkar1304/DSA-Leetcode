@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/maximum-strictly-increasing-cells-in-a-matrix/
 
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 // Recursion + Memoization ->
 class Solution {
     public int maxIncreasingCells(int[][] mat) {
@@ -56,7 +58,7 @@ class Solution {
 
 
 // optimal Sol -> (Need to watch videos on yt for this)
-class Solution {
+class Solution1 {
 
     public int maxIncreasingCells(int[][] mat) {
         int n = mat.length;

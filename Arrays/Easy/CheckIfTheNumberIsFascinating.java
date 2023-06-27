@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/check-if-the-number-is-fascinating/
 
+
 class Solution {
     public boolean isFascinating(int n) {
         

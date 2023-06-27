@@ -23,7 +23,7 @@ public class PredictTheWinner{
         
     }
     
-    public boolean PredictTheWinner(int[] nums) {
+    public boolean PredictTheWinner1(int[] nums) {
         int n = nums.length;
         int[][] dp = new int[n+1][n+1];
         for(int i=0; i<n+1; i++){

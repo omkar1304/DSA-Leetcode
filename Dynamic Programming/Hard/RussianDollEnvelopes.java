@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/russian-doll-envelopes/
 
+import java.util.*;
+
 public class RussianDollEnvelopes {
     public int lowerBound(List<Integer> tempList, int target){
         // this method is used to get lowebound index from list

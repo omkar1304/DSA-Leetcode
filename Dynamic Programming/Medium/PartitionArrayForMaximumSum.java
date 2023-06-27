@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/partition-array-for-maximum-sum/
 
+import java.util.*;
 public class PartitionArrayForMaximumSum {
     public int helper(int[] arr, int k, int i, int j, int[] dp){
         // base case

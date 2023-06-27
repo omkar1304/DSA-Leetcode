@@ -58,7 +58,6 @@ class Solution {
         
         // get the reverse of x
         String y = reverse(x);
-        int count = 0;
         int n = x.length();
         
         // Memoization ->

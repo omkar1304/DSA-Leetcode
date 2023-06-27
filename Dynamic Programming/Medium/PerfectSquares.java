@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/perfect-squares/
 
+import java.util.*;
+
 public class PerfectSquares {
     public int helper(int n, int[] dp){
         // base case

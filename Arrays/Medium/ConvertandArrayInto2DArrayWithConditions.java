@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/convert-an-array-into-a-2d-array-with-conditions/
 
+import java.util.*;
+
 /*
 Idea : Count the frequency of elements.The rows in result list we need is equal to the maximum frequency.
 */

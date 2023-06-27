@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/number-of-good-ways-to-split-a-string/
 
+import java.util.*;
 class Solution {
     public int numSplits(String s) {
         

@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/triangle/submissions/
 
+import java.util.*;
+
 public class Triangle {
     public int helper(List<List<Integer>> triangle, int level, int index, int[][] dp){
         // base case 

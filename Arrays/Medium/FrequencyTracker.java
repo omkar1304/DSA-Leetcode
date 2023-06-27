@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/frequency-tracker/
 
+import java.util.*;
+
 // Brute force -> 
 
 class FrequencyTracker {
@@ -35,12 +37,12 @@ class FrequencyTracker {
 
 // Optimal sol -> to avoid O(n) while determining if frequency is present or not in Data structure we can use frequency array which stores count of frequencies and can get result in O(1)
 
-class FrequencyTracker {
+class FrequencyTracker1 {
     
     Map<Integer, Integer> map;
     int[] frequency;
 
-    public FrequencyTracker() {
+    public FrequencyTracker1() {
         
         map = new HashMap<>();
         frequency = new int[100001];

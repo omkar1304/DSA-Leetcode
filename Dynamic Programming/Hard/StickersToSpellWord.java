@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/stickers-to-spell-word/
 
+import java.util.*;
+
 class Solution {
     public int minStickers(String[] stickers, String target) {
         // to store stickers count with chars 
@@ -44,7 +46,7 @@ class Solution {
         // here we are taking frequency table of each sticker
         for(String str: map.keySet())
         {
-            HashMap<Character, Integer>x = new HashMap(map.get(str)); // to get frequency table of that particular string
+            HashMap<Character, Integer>x = new HashMap<>(map.get(str)); // to get frequency table of that particular string
             String temp = target;
             
             // if first char of temp is present in fre. table then 

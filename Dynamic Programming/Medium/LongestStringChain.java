@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/longest-string-chain/
 
+import java.util.*;
+
 class Solution {
     public boolean checkPossible(String s1, String s2){
         // if length are not matching as per condition -> prev string length + 1 = current string length

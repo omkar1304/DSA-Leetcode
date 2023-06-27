@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/number-of-longest-increasing-subsequence/
 
+import java.util.*;
+
 public class NumberOfLongestIncreasingSubsequence {
     public int findNumberOfLIS(int[] nums) {
         

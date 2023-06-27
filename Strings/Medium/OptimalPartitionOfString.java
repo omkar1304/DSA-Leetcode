@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/optimal-partition-of-string/
 
+import java.util.*;
 // Brute force ->
 class Solution {
     public int partitionString(String s) {
@@ -30,7 +31,8 @@ class Solution {
 }
 
 // Optimal sol ->
-class Solution {
+
+class Solution1 {
     public int partitionString(String s) {
         
         // creating array to store last seen index as per string 

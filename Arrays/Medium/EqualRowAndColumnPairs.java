@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/equal-row-and-column-pairs/
 
+import java.util.*;
+
 class Solution {
     public int equalPairs(int[][] grid) {
         

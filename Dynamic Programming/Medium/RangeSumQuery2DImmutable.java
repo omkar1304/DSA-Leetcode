@@ -2,7 +2,7 @@
 
 public class RangeSumQuery2DImmutable {
     int[][] dp;
-    public NumMatrix(int[][] matrix) {
+    public void NumMatrix(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
         dp = new int[m+1][n+1];

@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/last-stone-weight/
 
+import java.util.*;
+
 class Solution {
     public int lastStoneWeight(int[] stones) {
         

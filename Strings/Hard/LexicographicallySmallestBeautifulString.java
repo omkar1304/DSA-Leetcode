@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/lexicographically-smallest-beautiful-string/
 
+import java.util.*;
 class Solution {
     public String smallestBeautifulString(String s, int k) {
         

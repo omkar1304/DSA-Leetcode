@@ -48,7 +48,7 @@ class Solution {
 
 // TC - O(N) SC - O(1)
 
-class Solution {
+class Solution1 {
     public long maxAlternatingSum(int[] nums) {
         /*
         It's dp-like problem,

@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/reducing-dishes/
 
+import java.util.*;
 class Solution {
     public int helper(int[] nums, int index, int time, int[][] dp){
         // base case

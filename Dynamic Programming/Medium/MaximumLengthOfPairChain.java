@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/maximum-length-of-pair-chain/
 
+import java.util.*;
 public class MaximumLengthOfPairChain {
     public int findLongestChain(int[][] nums) {
         // sorting array based on jth value so we can form chain by chcecking prev jth value and current ith value

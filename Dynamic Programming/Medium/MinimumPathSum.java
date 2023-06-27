@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/minimum-path-sum/
 
+import java.util.*;
+
 public class MinimumPathSum {
     public int minPathSum(int[][] grid) {
         // Memoization ->

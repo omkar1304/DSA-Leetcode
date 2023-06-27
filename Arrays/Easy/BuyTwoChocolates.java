@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/buy-two-chocolates/
 
+import java.util.*;
+
 class Solution {
     public int buyChoco(int[] prices, int money) {
         

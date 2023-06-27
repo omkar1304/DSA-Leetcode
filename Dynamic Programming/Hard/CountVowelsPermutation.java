@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/count-vowels-permutation/
 
+import java.util.*;
 public class CountVowelsPermutation {
     private int mod = (int)1e9 + 7;
     

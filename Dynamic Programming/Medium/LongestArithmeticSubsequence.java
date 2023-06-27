@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/longest-arithmetic-subsequence/
 
+import java.util.*;
+
 public class LongestArithmeticSubsequence {
     public int longestArithSeqLength(int[] nums) {
         //minimum sequence is 2 because any two numbers can be a sequence for ex: 1,2 or 1,10 or 2,7 it is a sequence

@@ -22,7 +22,7 @@ public class ZigzagConversion {
 }
 
 // optimized ->
-class Solution {
+class Solution1 {
     public String convert(String s, int numRows) {
         
         char[] c = s.toCharArray();

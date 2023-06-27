@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/find-the-distinct-difference-array/
 
+import java.util.*;
 class Solution {
     public int[] distinctDifferenceArray(int[] nums) {
         

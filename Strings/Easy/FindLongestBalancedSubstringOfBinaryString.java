@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/find-the-longest-balanced-substring-of-a-binary-string/
 
+
 class Solution {
     public int findTheLongestBalancedSubstring(String s) {
         
